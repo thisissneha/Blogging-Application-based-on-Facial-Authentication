@@ -1,0 +1,294 @@
+.
+{% extends 'base.html' %}
+
+{% block title %} Sign-Up {% endblock %}
+
+{% load static %}
+{% block css %}
+
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+
+.navbar-nav{
+font-size: 17px;
+}
+
+<!--.one{-->
+<!--background: #f2ece7;-->
+<!--width:50%;-->
+<!--height:100%;-->
+<!--padding: 320px 100px;-->
+<!--}-->
+
+<!--.two{-->
+<!--background: white;-->
+<!--width:50%;-->
+<!--height:65%;-->
+<!--position: absolute;-->
+<!--left: 50%;-->
+<!--padding-left: 82px;-->
+<!--padding-right: 21px;-->
+<!--color: #45087e;-->
+<!--padding-top: 70px;-->
+<!--}-->
+
+.two h1{
+font-family: 'Lemonada', cursive;
+display: inline-block;
+font-size: 40px;
+padding: 3px 0px;
+margin-bottom: 0px 15px;
+}
+
+.two h5{
+font-family: 'Lemonada', cursive;
+margin-right: 20px;
+margin-bottom: 47px;
+}
+
+<!--.one h4{-->
+<!--font-family: 'Lemonada', cursive;-->
+<!--padding: 4px 62px;-->
+<!--}-->
+
+<!--.box{-->
+<!--width: 100%;-->
+<!--margin-left: 75px;-->
+<!--/* border-bottom: 2px solid orange; */-->
+<!--}-->
+
+.box input{
+font-family: 'Baloo Bhai 2', cursive;
+width: 75%;
+margin: 17px 0px;
+padding: 5px 10px;
+border: none;
+outline: none;
+color: black;
+background: none;
+}
+
+<!--.box i{-->
+<!--width: 30px;-->
+<!--text-align: center;-->
+<!--}-->
+
+.bttn {
+font-family: 'Lemonada', cursive;
+margin: 25px 0px;
+border-radius: 12px;
+background-color: black;
+color: white;
+font-size: 13px;
+font-weight: bold;
+padding: 10px 20px;
+cursor: pointer;
+outline: none!important;
+border: none;
+opacity: 0.8;
+text-align: center;
+margin-bottom:60px;
+}
+
+.bttn:hover{
+background-color: blue;
+color: white;
+}
+
+.row .form-control{
+background:#f9f9f900!important;
+}
+
+<!--.language-switch {-->
+<!--margin-right: 450px!important;-->
+<!--}-->
+
+.fa{
+padding-top: 26px;
+font-size: 20px;
+}
+
+.navbar-nav{
+font-size: 16px;
+}
+
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<!--<div style="display: flex;">-->
+<!--    <div class="one" style="display: flex;">-->
+<!--        <div>-->
+<!--            <img src="{% static 'img/face.jpg' %}">-->
+<!--        </div>-->
+<!--        <div style="margin-top:40px!important;">-->
+<!--            <h4>Sign Up with FACE LOCK </h4>-->
+<!--            <button style="margin-left: 63px;" class="bttn"><a style="color: white; text-decoration: none;"-->
+<!--                    href="#">Scan Face Lock</a></button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="two">-->
+
+<!--        <h1>Create Account </h1>-->
+<!--        <h5>Welcome to TakeBOOK, your friendly app for saving your Notes anywhere, anytime!</h5>-->
+<!--        <form class="form-signin" method="post" action="/signup/">-->
+<!--            {% csrf_token %}-->
+<!--            <div class="box">-->
+<!--                <i class="fa fa-user-secret"></i><input type="text" class="username" id="username" name="username"-->
+<!--                    placeholder="Enter a unique user name" required>-->
+<!--            </div>-->
+<!--            <div class="box">-->
+<!--                <i class="fa fa-user"></i><input type="text" maxlength="50" id="fname" name="fname" class="name"-->
+<!--                    placeholder="Enter your First Name" required>-->
+<!--            </div>-->
+<!--            <div class="box">-->
+<!--                <i class="fa fa-user"></i><input type="text" class="name" id="lname" name="lname"-->
+<!--                    placeholder="Enter your Last name" required>-->
+<!--            </div>-->
+<!--            <div class="box">-->
+<!--                <i class="fa fa-envelope"></i><input type="text" class="email" id="email" name="email"-->
+<!--                    placeholder="Enter your Email Address" required>-->
+<!--            </div>-->
+<!--            <div class="box">-->
+<!--                <i class="fa fa-mobile"></i><input type="text" class="phone" id="phone" name="phone"-->
+<!--                    placeholder="Enter your Phone Number" required>-->
+<!--            </div>-->
+<!--            <div class="box">-->
+<!--                <i class="fa fa-key"></i><input type="password" class="password" id="pass1" name="pass1"-->
+<!--                    placeholder="Enter your Password" required>-->
+<!--            </div>-->
+<!--            <div class="box">-->
+<!--                <i class="fa fa-key"></i><input type="password" class="password" id="pass2" name="pass2"-->
+<!--                    placeholder="Confirm password" required>-->
+<!--            </div>-->
+<!--            <div class="box">-->
+<!--                <label for="image">Your Image</label>-->
+<!--                <input type="file" id="image" name="image" value="Choose File" class="form-control">-->
+<!--            </div>-->
+<!--            <div class="box">-->
+<!--                <button style="margin-left: 18px;" type="submit" class="bttn">Create Account</button>-->
+<!--                <button id="myButton" style="margin-left: 40px;  padding: 10px 50px!important;" class="bttn">-->
+<!--                    LogIn</button>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+
+<!--</div>-->
+
+
+
+<script>
+    {% ifequal error "Yes" %}
+    {% ifequal error "y" %}
+    alert('Account is created Please Verify your email Before Login');
+    window.location = "{% url 'home' %}";
+    {% endifequal %}
+    {% endifequal %}
+    {% ifequal error "No" %}
+    alert('Account is created But your email is not Verified.');
+    alert('Verify your Email to continue.');
+    window.location = "{% url 'home' %}";
+    {% endifequal %}
+</script>
+
+
+
+<section id="appointment" style="padding-top: 50px; background: #f2ece7;" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <img src="{% static 'images/icon.png' %}" style="height: 470px; padding-top: 50px;" class="img-responsive" alt="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                         <!-- CONTACT FORM HERE -->
+                         <form id="appointment-form" role="form" method="post" action="" enctype="multipart/form-data">
+							 {% csrf_token %}
+
+                              <!-- SECTION TITLE -->
+                              <div class="two" data-wow-delay="0.4s">
+                                   <h1>Create Account </h1>
+                                   <h5>Welcome to TakeBOOK, your friendly app for saving your Notes anywhere,
+                                        anytime!</h5>
+                              </div>
+
+                              <div class="wow fadeInUp box" data-wow-delay="0.8s">
+                                   <div style="display:flex;">
+                                   <div class="col-md-6 col-sm-6">
+                                        <i class="fa fa-user-secret"></i>
+                                        <input type="text" class="name" id="uname" name="uname"
+                                               placeholder="Enter UserName" required>
+                                   </div>
+
+                                   <div class="col-md-6 col-sm-6">
+                                       <i class="fa fa-key"></i>
+                                        <input type="password" class="pwd" id="pwd" name="pwd"
+                                               placeholder="Enter Password" required>
+                                   </div>
+                                   </div>
+                                   <div style="display:flex;">
+
+                                   <div class="col-md-6 col-sm-6">
+                                         <i class="fa fa-user"></i>
+                                        <input type="text" id="fname" name="fname" placeholder="Enter First name" required>
+                                   </div>
+
+                                   <div class="col-md-6 col-sm-6">
+                                         <i class="fa fa-user"></i>
+									   <input type="text" id="lname" name="lname" placeholder="Enter Last name" required>
+                                   </div>
+                                   </div>
+
+                                   <div class="col-md-12 col-sm-12">
+                                         <i class="fa fa-envelope"></i>
+                                        <input type="email" id="email" name="email" class="email"
+                                               placeholder="Enter Email Address" aria-describedby="emailHelp" required>
+                                   </div>
+                                   <div class="col-md-12 col-sm-12">
+                                        <i class="fa fa-address-book"></i>
+									   <input type="text" id="add" name="add" placeholder="Describe Yourself for Better Experience"
+                                              class="add">
+                                   </div>
+                                   <div class="col-md-12 col-sm-12">
+
+                                         <i class="fa fa-file-image-o"></i><input type="file" id="image" name="image"
+                                                                  value="Choose File"
+                                              class="image" style="outline: none; border: none;" required>
+                                   </div>
+                                   <div class="col-md-12 col-sm-12">
+                                        <button type="submit" class="bttn" name="submit">Create Account</button>
+                                        <button class="bttn" id="myButton" style=" margin-left: 50px; padding: 10px 49px;"><a
+                                  style="color:white;" >Sign In</a></button>
+                                  </div>
+                              </div>
+                        </form>
+
+
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+{% endblock %}
+
+{% block js %}
+
+document.getElementById("myButton").onclick = function () {
+location.href = "../signIn";
+};
+
+{% endblock %}

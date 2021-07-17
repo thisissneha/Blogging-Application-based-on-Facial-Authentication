@@ -1,0 +1,739 @@
+{% extends 'base.html' %}
+
+{% block title %} Search Results {% endblock %}
+
+{% block blogactive %} active {% endblock blogactive%}
+
+{% block css %}
+
+body{
+overflow-x:hidden;
+}
+
+
+.box-search{
+margin:0px;
+    margin-left: 175px;
+}
+
+.search{
+    color: #142ac8;
+    font-size: 40px;
+    font-weight: 700;
+}
+.my-5 {
+    margin-bottom: 12rem!important;
+}
+.search-color{
+    border: 2px solid #876fba75;
+    padding: 35px 50px;
+    background: #8d7fc885;
+    border-radius: 35px;
+    outline: none;
+    margin-top: 60px;
+    margin-right: 115px;
+}
+
+
+
+
+
+#wrapper {
+  width: 100%;
+  font-family: Lato;
+}
+
+#side {
+      width: 30%;
+    height: 100%;
+    padding: 6%;
+    position: fixed;
+    left: 0;
+       top: 55px;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    background: rgb(241 9 52 / 40%);
+<!--    text-shadow: 0px 0px 5px #ef092c;-->
+  h1 {
+    font-size: 24px;
+  }
+}
+
+#main {
+  margin-left: 30%;
+  width: 70%;
+  float: left;
+}
+
+.main-content {
+  padding: 60px 60px;
+}
+
+body {
+margin: 0px;
+padding: 0px;
+background: linear-gradient(#98d7e7ba, pink);
+<!-- background-image: -webkit-gradient(linear, left top, right top, from(#ffee99), to(#99eeff));  -->
+<!-- background-color: #000000e0!important; -->
+background-size: cover;
+<!-- background: linear-gradient(to right, #ffee77, #77eeff); -->
+}
+
+.container{
+margin-left: 0px!important;
+}
+
+.container .col-lg-3 .navbar-brand {
+margin-left:180px!important;
+}
+
+.container .col-md-6 {
+margin-right:-155px!important;
+}
+
+.container .col-sm-12 {
+margin-right:-187px!important;
+}
+
+.blog-box {
+display: flex;
+justify-content: center;
+margin-bottom: 30px;
+}
+
+.box {
+/* margin: 50px 516px; */
+padding: 28px;
+/* border: 2px solid red; */
+margin: 0px 24px;
+border-radius: 22px;
+background: url('../static/img/blog-base1.jpg');
+background-repeat: no-repeat;
+/* background-attachment: fixed; */
+/* background-size: cover; */
+padding: 28px;
+height: 461px;
+width: 34%;
+margin-top: 50px !important;
+animation-name: animation;
+animation-duration: 1s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+
+@keyframes animation {
+0% {
+border-color: #0cce6b;
+box-shadow: 0px 0px 25px #0cce6b;
+border-radius: 5px;
+}
+
+25% {
+border-color: #dced31;
+box-shadow: -1px -1px 30px #dced31;
+}
+
+50% {
+border-color: #ef2d56;
+box-shadow: 1px 1px 25px #ef2d56;
+border-radius: 35px;
+}
+
+75% {
+border-color: #ed7d3a;
+box-shadow: -1px -1px 30px #ed7d3a;
+}
+
+100% {
+border-color: #0cce6b;
+box-shadow: 1px 1px 25px #0cce6b;
+border-radius: 5px;
+}
+}
+
+h1 {
+margin-top: 81px;
+padding: 20px 19px;
+text-align: center;
+font-size: 40px;
+}
+
+.d-para {
+padding: 0px 41px;
+font-size: 17px;
+margin-top: -19px;
+text-align: center;
+}
+
+
+a,
+.text-muted {
+color: #626262;
+}
+
+.t1 {
+font-size: 1.5rem;
+margin-top: -10px;
+margin-bottom: 5px;
+font-weight: 600;
+}
+
+.t2 {
+font-size: 1.25rem;
+}
+
+.t3 {
+font-size: 1rem;
+}
+
+.t4 {
+font-size: 0.85rem;
+}
+
+.t5 {
+font-size: 0.5rem;
+}
+
+.w-100 {
+width: 100%;
+}
+
+.box-inside {
+outline: none;
+height: 587px;
+width: 300px;
+margin-top: -42px;
+padding: 1rem 1.5rem;
+border-radius: 25px;
+box-shadow: -6px -4px 4px 0px #df4f5e, 6px 4px 6px 0px #df4f5e;
+color: #626262;
+background-color: #070113db;
+margin-bottom: 52px;
+}
+
+.inside {
+display: flex;
+justify-content: space-between;
+}
+
+button,
+.btn,
+.t4,
+.toggle-group label {
+position: relative;
+background: inherit;
+outline: none;
+border: none;
+box-shadow: -4px -2px 4px 0px #262830, 4px 2px 6px 0px #111316;
+cursor: pointer;
+}
+
+button:focus:after,
+button:active:after,
+.btn.active:after,
+.toggle-group input:checked + label:after {
+content: "";
+position: absolute;
+left: 0;
+top: 0;
+right: 0;
+bottom: 0;
+border-radius: 6px;
+box-shadow: 2px 2px 2px 0px #111316 inset, -2px -2px 2px 0px #262830 inset;
+}
+
+button {
+padding: 0.5rem 0.75rem;
+border-radius: 6px;
+}
+
+button svg.feather {
+width: 1.25rem;
+height: 1.25rem;
+}
+
+.fas {
+color: #626262;
+font-size: 20px;
+}
+
+.btn {
+padding: 0.5rem 0.75rem;
+border-radius: 6px;
+}
+
+.fas.active {
+color: #ff240f;
+}
+
+main {
+padding: 1.5rem 0.25rem;
+}
+
+.toggle-group {
+display: flex;
+justify-content: space-around;
+}
+
+.toggle-group label {
+flex: 1;
+padding: 0.7rem;
+text-align: center;
+border-radius: 8px;
+}
+
+.toggle-group label:first-of-type {
+margin-right: 1rem;
+}
+
+.toggle-group input {
+display: none;
+}
+
+#btntransactions {
+font-size: 17px;
+color: #626262;
+padding: 0.75rem;
+font-weight: 800;
+outline:none;
+}
+
+
+.email{
+width: 102%;
+padding: 5px 5px;
+margin-top: 5px;
+margin-bottom: 15px;
+border: 2px solid black;
+border-radius: 7px;
+opacity: 0.6;
+box-shadow: -4px -2px 4px 0px #262830, 4px 2px 6px 0px #111316;
+}
+
+.bttn{
+margin-left: 77px;
+margin-bottom: 30px;
+}
+
+
+main h1 {
+color: #626262;
+overflow: hidden; /* Ensures the content is not revealed until the animation */
+border-right: 0.1em solid #a6a6a6; /* The typwriter cursor */
+white-space: nowrap; /* Keeps the content on a single line */
+margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+letter-spacing: 0.15em;
+animation: typing 3.5s steps(20, end) forwards infinite,
+blink-caret 0.75s step-end infinite;
+}
+@media (min-width: 1170px) {
+/* The typing effect */
+@keyframes typing {
+from {
+width: 0;
+}
+to {
+width: 108%;
+}
+}
+}
+@media (max-width: 1169.99px) {
+/* The typing effect */
+@keyframes typing {
+from {
+width: 0;
+}
+to {
+width: 37%;
+}
+}
+}
+@media (max-width: 969.99px) {
+/* The typing effect */
+@keyframes typing {
+from {
+width: 0;
+}
+to {
+width: 45%;
+}
+}
+}
+@media (max-width: 769.99px) {
+/* The typing effect */
+@keyframes typing {
+from {
+width: 0;
+}
+to {
+width: 70%;
+}
+}
+}
+@media (max-width: 469.99px) {
+main h1 {
+letter-spacing: 80%;
+font-size: 150%;
+}
+/* The typing effect */
+@keyframes typing {
+from {
+width: 0;
+}
+to {
+width: 85%;
+}
+}
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+from {
+border-color: transparent;
+}
+to {
+border-color: transparent;
+opacity: 0;
+}
+50% {
+border-color: white;
+}
+}
+
+
+body {
+font-family: 'Lato', sans-serif;
+}
+
+
+.content-boxs {
+background-color: #a01ca5;
+background: -moz-linear-gradient(top, #3b5998, #2b4170);
+background: -ms-linear-gradient(top, #3b5998, #2b4170);
+background: -webkit-linear-gradient(top, #b950d9, #271f72););
+margin: 100px auto;
+width: 356px;
+}
+
+.content-box {
+width: 330px;
+height: 125px;
+float: left;
+margin: 0 3px 3px 0;
+padding: 26px 0 0 31px;
+position: relative;
+margin-bottom: 7px;
+}
+
+.content-box:before,
+.content-box:after {
+display: table;
+content: "";
+}
+
+.content-box:hover {
+z-index: 2;
+}
+
+.content-box .background {
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.28);
+position: absolute;
+left: 0;
+top: 0;
+ -webkit-transition: background-color .2s, -webkit-transform .2s;
+transition: background-color .2s, transform .2s;
+z-index: 1;
+}
+
+.content-box:hover .background {
+background-color: white;
+ -webkit-transform: scale(1.12);
+transform: scale(1.12);
+}
+
+.content-box .foreground {
+position: relative;
+z-index: 2;
+}
+
+.content-icon {
+background-color: #fff;
+background-position: center;
+background-repeat: no-repeat;
+border-radius: 50%;
+box-shadow: 0 10px 15px 0 rgba(14, 48, 57, 0.1);
+float: left;
+height: 52px;
+margin-top: 3px;
+width: 52px;
+}
+
+.content-box:hover .content-icon {
+box-shadow: 0 2px 5px 0 rgba(188, 204, 219, 0.26), 0px 2px 10px 0 rgba(79, 105, 129, 0.16);
+}
+
+.content-info {
+color: white;
+float: left;
+line-height: 17px;
+margin-left: 21px;
+margin-top: -3px;
+ -webkit-transition: -webkit-transform .2s;
+transition: transform .2s;
+width: 75%;
+}
+
+.content-title {
+color: white;
+font-size: 18px;
+font-weight: 700;
+text-transform: none;
+letter-spacing: .4px;
+margin: -3px 0 8px;
+}
+
+.content-desc {
+font-size: 16px;
+font-weight: normal;
+line-height: 1.4;
+padding-right: 25px;
+}
+
+.content-btn {
+color: #434e5a;
+font-size: 13px;
+font-weight: 800;
+margin-top: 10px;
+opacity: 0;
+ -webkit-transition: opacity .2s;
+transition: opacity .2s;
+}
+
+.content-btn:after {
+content: '';
+display: inline-block;
+vertical-align: middle;
+background: no-repeat;
+width: 10px;
+height: 8px;
+margin-bottom: 1px;
+margin-left: 7px;
+}
+
+.content-box:after {
+clear: both;
+}
+
+.content-box:hover .content-info {
+color: #8c989e;
+ -webkit-transform: translate(0, -28px);
+transform: translate(0, -28px);
+}
+
+.content-info:hover .content-title {
+opacity: 0;
+}
+
+.content-info:hover .content-btn {
+opacity: 1;
+}
+
+.fa {
+display: block;
+text-align: center;
+line-height: 52px;
+color: #2b4170;
+font-size: 24px;
+}
+
+.row{
+justify-content: center;
+}
+
+
+
+{% endblock css %}
+
+{% block body %}
+
+
+
+
+
+
+<div class="box-1" style="display: flex; padding-right: 75px;">
+    <div class="container">
+<div class="box-search">
+  <br>
+  <br>
+  <div class="container my-5" style="margin-left: 305px;">
+    <h2 class="search mb-5">Search Results:</h2>
+
+    <div class="container my-4">
+      {% for post in allPosts %}
+        <div class=" mb-5 row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style="width:70%; text-align: center;box-shadow: 0px -4px 15px 0px rgba(0,0,0,0.75)!important;">
+      <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Article by {{post.author}}</strong>
+          <h3 class="mb-0" style="color:red;">{{post.title}}</h3>
+          <div class="mb-1 small text-capitalize">( {{post.Category}} )</div>
+          <div class="mb-1 text-muted">{{post.timeStamp}}</div>
+<!--          <p class="card-text mb-auto">{{post.content|safe|truncatechars:200}}</p>-->
+          <a href="/blog/{{post.slug}}" class="stretched-link">Continue reading</a>
+      </div>
+        </div>
+      {% endfor %}
+    </div>
+
+       <div class="container mt-5">
+
+       {% for task in tasks %}
+         {% if task.VisibilityMode == 'Pub' %}
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style="width:70%; text-align: center;box-shadow: 0px -4px 15px 0px rgba(0,0,0,0.75)!important;">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">Article by {{task.author}}</strong>
+                    <h3 class="mb-0"><a class="text-danger" href="/notes/notes/{{task.id}}">{{task.title}}</a></h3>
+                    <div class="mb-1 small text-capitalize">( {{task.Category}} )</div>
+                    <div class="mb-1 text-muted">{{task.created}}</div>
+<!--                    <p class="card-text mb-auto">{{task.desc|safe|truncatechars:200}}</p>-->
+                    <a href="/notes/notes/{{task.id}}" class="stretched-link">Continue reading</a>
+                </div>
+            </div>
+
+        {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+      <div>
+      {% if allPosts|length < 1 or tasks|length < 1 %}
+    <div class="search-color">
+    <p class="search">No Search results</p>
+    <h6 class="search">Your Search Result <b>{{query}} </b> did not match any documents.<br>
+      <b>Suggestions:</b></h6>
+    <ul>
+      <li class="search">Try Different Keyword.</li>
+    </ul>
+    </div>
+    {% endif %}
+      </div>
+
+
+  </div>
+  <br>
+  <br>
+</div>
+
+    </div>
+
+
+    <div style="margin-right: -464px!important;">
+
+        <div class="box-inside" style="margin-top: 50px;">
+            <div>
+                <nav class="inside">
+                    <a href="../"><button type="button"><i class="fas fa-arrow-left"></i></button></a>
+                    <button type="button"><i class="fas fa-bars"></i></button>
+                </nav>
+            </div>
+
+            <main>
+                <h1 class="t1">Want to Know :)</h1>
+                <div class="toggle-group">
+                    <!-- <input id="today" type="radio" name="data-choose"> -->
+                    <label for="about" class="t4"><a href="../about" id="about"
+                            style="text-decoration: none; color: #626262;"><strong>About Us</strong></a></label>
+                    <!-- <input id="yesterday" type="radio" name="data-choose" checked> -->
+                    <label for="contact" class="t4"><a href="../contact" id="contact"
+                            style="text-decoration: none; color: #626262;"><strong>Contact Us</strong></a></label>
+                </div>
+
+
+                <div>
+                    <h6 style="text-align: center; margin-top: 17px; color: #626262!important;">Want to get notify for
+                        our
+                        latest blog.</h6>
+                    <h4 style="margin-left: 22px;font-weight: 800; color: #626262!important;">Subscribe Now</h4>
+                    <form action="" method="post">
+                        <input type="text" class="email" id="email" name="email" value="{{request.user.email}}"
+                               placeholder="Enter your Email">
+                        <button style="color:#aca1a5fa!important;font-weight: 700;" class="bttn"
+                            type="submit">Subscribe</button>
+                    </form>
+                </div>
+
+                <button class="t4 w-100" id="myButton" style="text-decoration: none;color: #626262; font-size: 19px;font-weight: 800; outline: none;">View my
+                Post
+                </button>
+            </main>
+
+            <nav class="inside">
+                <a href="../" class="btn text-muted"><i class="fas fa-home"></i></a>
+                <a href="" class="btn text-muted"><i class="fas fa-briefcase"></i></a>
+                <a href="" class="btn text-muted active"><i class="fas fa-chart-line active"></i></a>
+                <a href="" class="btn text-muted"><i class="fas fa-bell"></i></a>
+            </nav>
+
+        </div>
+
+        <div class="content-boxs"
+            style="border-radius: 10px; display: grid!important; margin-top: 50px; margin-right:425px; padding: 12px;">
+            <h4 style="color: white; padding-bottom: 7px; font-weight: 600;">Recommendations</h4>
+            <a href="/blog/1" class="content-box">
+                <div class="background"></div>
+                <div class="foreground">
+                    <div class="content-icon">
+                        <i class="fa fa-area-chart" aria-hidden="true"></i>
+                    </div>
+                    <div class="content-info">
+                        <h4 class="content-title">6 Interesting Indi...</h4>
+                        <div class="content-desc">Indian culture and tradition have so many nuances and intricacies
+                            that the country...</div>
+                        <div class="content-btn" id="content-one">Know more</div>
+                    </div>
+                </div>
+            </a>
+
+
+            <a href="/blog/2" class="content-box">
+                <div class="background"></div>
+                <div class="foreground">
+                    <div class="content-icon">
+                        <i class="fa fa-area-chart" aria-hidden="true"></i>
+                    </div>
+                    <div class="content-info">
+                        <h4 class="content-title">Health and Fitnes...</h4>
+                        <div class="content-desc">
+                           Living with hypertension can be concerning. You may be fearful of your...
+                        </div>
+                        <div class="content-btn">Know more</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/blog/10000" class="content-box">
+                <div class="background"></div>
+                <div class="foreground">
+                    <div class="content-icon">
+                        <i class="fa fa-area-chart" aria-hidden="true"></i>
+                    </div>
+                    <div class="content-info">
+                        <h4 class="content-title">Create a blog conten...</h4>
+                        <div class="content-desc">
+                            A content calendar keeps you on track and creates a system to ensure your c...
+                        </div>
+                        <div class="content-btn">Know more</div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+{% endblock %}

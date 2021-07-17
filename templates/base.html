@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="shortcut icon" href="#">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
+    <script src="https://kit.fontawesome.com/478e2da106.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link href="static/styles.min.css" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&family=Lemonada:wght@600&display=swap"
+        rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500&display=swap" rel="stylesheet">
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <style>
+    
+    <title>{% block title %} {% endblock %}</title>
+
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        /* navbar */
+        /* Background Gradient */
+        #top-main-navigation {
+            background: linear-gradient(-50deg, #ee5952, #ea3a7e, #20aadb, #23e0b3);
+            background-size: 320% 200%;
+            -webkit-animation: Gradient 15s ease infinite;
+            -moz-animation: Gradient 15s ease infinite;
+            animation: Gradient 15s ease infinite;
+        }
+
+        @-webkit-keyframes Gradient {
+            0% {
+                background-position: 0 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0 50%;
+            }
+        }
+
+        @-moz-keyframes Gradient {
+            0% {
+                background-position: 0 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0 50%;
+            }
+        }
+
+        @keyframes Gradient {
+            0% {
+                background-position: 0 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0 50%;
+            }
+
+            position : sticky;
+            top : 0;
+        }
+
+        /* footer */
+        footer {
+            padding: 3rem 0;
+            color: #cbd1d3;
+            background: #1d2b34
+        }
+
+        @media screen and (min-width:50rem) {
+            footer {
+                padding: 3rem 0
+            }
+        }
+
+        footer ul,
+        footer li {
+            padding: 0;
+            margin: 0;
+            list-style: none
+        }
+
+        footer ul li h3 {
+            font-weight: 500;
+            color: #fff
+        }
+
+        footer ul li a {
+            color: #cbd1d3
+        }
+
+        footer ul li a:hover {
+            color: #fff;
+            text-decoration: none
+        }
+
+        footer ul li a:focus {
+            color: #fff;
+            background: rgba(0, 0, 0, .2)
+        }
+
+        footer section {
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-lines: multiple;
+            -moz-box-lines: multiple;
+            box-lines: multiple;
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -moz-box-direction: normal;
+            box-direction: normal;
+            -webkit-flex-direction: row;
+            -moz-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-direction: row;
+            -webkit-box-pack: start;
+            -moz-box-pack: start;
+            box-pack: start;
+            -webkit-justify-content: flex-start;
+            -moz-justify-content: flex-start;
+            -ms-justify-content: flex-start;
+            -o-justify-content: flex-start;
+            justify-content: flex-start;
+            -ms-flex-pack: start
+        }
+
+        @media screen and (min-width:30rem) {
+            footer section {
+                -webkit-box-lines: single;
+                -moz-box-lines: single;
+                box-lines: single;
+                -webkit-flex-wrap: nowrap;
+                -moz-flex-wrap: nowrap;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap
+            }
+        }
+
+        .rtl footer section {
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+            -webkit-box-direction: reverse;
+            -moz-box-direction: reverse;
+            box-direction: reverse;
+            -webkit-flex-direction: row-reverse;
+            -moz-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+            -ms-flex-direction: row-reverse
+        }
+
+        footer section.meta {
+            -webkit-box-pack: justify;
+            -moz-box-pack: justify;
+            box-pack: justify;
+            -webkit-justify-content: space-between;
+            -moz-justify-content: space-between;
+            -ms-justify-content: space-between;
+            -o-justify-content: space-between;
+            justify-content: space-between;
+            -ms-flex-pack: justify;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            box-orient: vertical;
+            -webkit-box-direction: normal;
+            -moz-box-direction: normal;
+            box-direction: normal;
+            -webkit-flex-direction: column;
+            -moz-flex-direction: column;
+            flex-direction: column;
+            -ms-flex-direction: column
+        }
+
+        @media screen and (min-width:87.5rem) {
+            footer section.meta {
+                -webkit-box-orient: horizontal;
+                -moz-box-orient: horizontal;
+                box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -moz-box-direction: normal;
+                box-direction: normal;
+                -webkit-flex-direction: row;
+                -moz-flex-direction: row;
+                flex-direction: row;
+                -ms-flex-direction: row
+            }
+        }
+
+        footer section.meta>div {
+            margin-top: 1rem
+        }
+
+        @media screen and (min-width:87.5rem) {
+            footer section.meta>div {
+                margin-top: 0
+            }
+        }
+
+        .rtl footer section.meta {
+            -webkit-box-align: end;
+            -moz-box-align: end;
+            box-align: end;
+            -webkit-align-items: flex-end;
+            -moz-align-items: flex-end;
+            -ms-align-items: flex-end;
+            -o-align-items: flex-end;
+            align-items: flex-end;
+            -ms-flex-align: end
+        }
+
+        @media screen and (min-width:87.5rem) {
+            .rtl footer section.meta {
+                -webkit-box-orient: horizontal;
+                -moz-box-orient: horizontal;
+                box-orient: horizontal;
+                -webkit-box-direction: reverse;
+                -moz-box-direction: reverse;
+                box-direction: reverse;
+                -webkit-flex-direction: row-reverse;
+                -moz-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+                -ms-flex-direction: row-reverse;
+                -webkit-box-align: start;
+                -moz-box-align: start;
+                box-align: start;
+                -webkit-align-items: flex-start;
+                -moz-align-items: flex-start;
+                -ms-align-items: flex-start;
+                -o-align-items: flex-start;
+                align-items: flex-start;
+                -ms-flex-align: start
+            }
+        }
+
+        footer section ul {
+            display: block;
+            width: 50%;
+            margin-bottom: 1rem
+        }
+
+        .rtl footer section ul {
+            text-align: right
+        }
+
+        @media screen and (min-width:30rem) {
+            footer section ul {
+                display: inline-block;
+                width: 33.33%;
+                margin-bottom: 0
+            }
+        }
+
+        @media screen and (min-width:37.5rem) {
+            footer section ul {
+                width: 20%
+            }
+        }
+
+        footer .meta>span {
+            color: #cbd1d3
+        }
+
+        footer .meta ul {
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-lines: multiple;
+            -moz-box-lines: multiple;
+            box-lines: multiple;
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -moz-box-direction: normal;
+            box-direction: normal;
+            -webkit-flex-direction: row;
+            -moz-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-direction: row;
+            -webkit-box-pack: start;
+            -moz-box-pack: start;
+            box-pack: start;
+            -webkit-justify-content: flex-start;
+            -moz-justify-content: flex-start;
+            -ms-justify-content: flex-start;
+            -o-justify-content: flex-start;
+            justify-content: flex-start;
+            -ms-flex-pack: start;
+            width: auto
+        }
+
+        footer .meta ul li {
+            padding: 0 .25rem
+        }
+
+        footer .meta ul li:first-child {
+            padding: 0 .25rem 0 0
+        }
+
+        footer .meta ul li:first-child:before {
+            display: none
+        }
+
+        .rtl footer .meta ul li {
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+            -webkit-box-direction: reverse;
+            -moz-box-direction: reverse;
+            box-direction: reverse;
+            -webkit-flex-direction: row-reverse;
+            -moz-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+            -ms-flex-direction: row-reverse
+        }
+
+        .rtl footer .meta ul li:last-child {
+            padding-right: 0
+        }
+
+        footer .meta ul li:before {
+            -webkit-transform: translateX(-1.375rem) translateY(.625rem);
+            -moz-transform: translateX(-1.375rem) translateY(.625rem);
+            -ms-transform: translateX(-1.375rem) translateY(.625rem);
+            -o-transform: translateX(-1.375rem) translateY(.625rem);
+            transform: translateX(-1.375rem) translateY(.625rem);
+            position: absolute;
+            width: .125rem;
+            height: .625rem;
+            background: #2f454f;
+            display: none;
+            content: ''
+        }
+
+        @media screen and (min-width:50rem) {
+            footer .meta ul li {
+                padding: 0 1.25rem
+            }
+
+            footer .meta ul li:first-child {
+                padding: 0 1.25rem 0 0
+            }
+
+            footer .meta ul li:first-child:before {
+                display: none
+            }
+
+            footer .meta ul li:before {
+                -webkit-transform: translateX(-1.375rem) translateY(.625rem);
+                -moz-transform: translateX(-1.375rem) translateY(.625rem);
+                -ms-transform: translateX(-1.375rem) translateY(.625rem);
+                -o-transform: translateX(-1.375rem) translateY(.625rem);
+                transform: translateX(-1.375rem) translateY(.625rem);
+                display: block
+            }
+        }
+
+        footer .copyright {
+            float: left;
+            margin: 0 1.25rem 1.25rem 0
+        }
+
+        footer hr {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            border: 0 solid transparent;
+            border-bottom: .0625rem solid #2f454f
+        }
+
+        .language-switch {
+            background-color: #303e47;
+            /* background-image: url(../img/ui/icon-arrow-down.png); */
+            background-size: 12px;
+            background-position: 95% 50%;
+            background-repeat: no-repeat;
+            color: #c5c9db;
+            border: 0 solid transparent;
+            width: 12.5rem;
+            height: 2.25rem;
+            margin-top: -.1875rem;
+            font-size: 15px;
+            padding: 0 2rem 0 .625rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 477px;
+        }
+
+        .language-switch:hover {
+            background-color: #31434e
+        }
+
+        .language-switch:active,
+        .language-switch:focus {
+            background-color: #0f1519
+        }
+
+        .rtl .language-switch {
+            padding: 0 .625rem 0 2rem;
+            background-position: 5% 50%
+        }
+
+        .additional-translations {
+            display: none
+        }
+
+
+        button,
+.btn {
+position: relative;
+background: inherit;
+outline: none;
+border: none;
+box-shadow: -4px -2px 4px 0px #262830, 4px 2px 6px 0px #111316;
+cursor: pointer;
+}
+
+button:focus:after,
+button:active:after,
+.btn.active:after {
+content: "";
+position: absolute;
+left: 0;
+top: 0;
+right: 0;
+bottom: 0;
+border-radius: 6px;
+box-shadow: 2px 2px 2px 0px #111316 inset, -2px -2px 2px 0px #262830 inset;
+}
+
+button {
+padding: 0.5rem 0.75rem;
+border-radius: 6px;
+}
+
+
+body {
+  background-color: #FFFFFF;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.user-menu-wrap {
+  position: relative;
+  width: 36px;
+  margin-left: 27px;
+}
+
+.menu-container {
+  visibility: hidden;
+  opacity: 0;
+}
+.menu-container.active {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.user-menu {
+  position: absolute;
+  right: -22px;
+  background-color: #FFFFFF;
+  width: 256px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+.user-menu .profile-highlight {
+  display: -webkit-box;
+  display: flex;
+  border-bottom: 1px solid #E0E0E0;
+  padding: 12px 16px;
+  margin-bottom: 6px;
+}
+.user-menu .profile-highlight img {
+  width: 48px;
+  height: 48px;
+  border-radius: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.user-menu .profile-highlight .details {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin: auto 12px;
+}
+.user-menu .profile-highlight .details #profile-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+.user-menu .profile-highlight .details #profile-footer {
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 4px;
+}
+.user-menu .footer {
+  border-top: 1px solid #E0E0E0;
+  padding-top: 6px;
+  margin-top: 6px;
+}
+.user-menu .footer .user-menu-link {
+  font-size: 13px;
+}
+.user-menu .user-menu-link {
+  display: -webkit-box;
+  display: flex;
+  text-decoration: none;
+  color: #333333;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 12px 16px;
+}
+.user-menu .user-menu-link div {
+  margin: auto 10px;
+}
+.user-menu .user-menu-link:hover {
+  background-color: #F5F5F5;
+  color: #333333;
+}
+.user-menu:before {
+  position: absolute;
+  top: -16px;
+  left: 120px;
+  display: inline-block;
+  content: "";
+  border: 8px solid transparent;
+  border-bottom-color: #E0E0E0;
+}
+.user-menu:after {
+  position: absolute;
+  top: -14px;
+  left: 121px;
+  display: inline-block;
+  content: "";
+  border: 7px solid transparent;
+  border-bottom-color: #FFFFFF;
+}
+
+
+    </style>
+    <style>{% block css %}{% endblock %}</style>
+
+</head>
+
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-dark fixed-top" id="top-main-navigation">
+        <div class="container">
+            <div class="col-lg-3 col-md-3">
+                <a class="navbar-brand" href="../">Take<b>BOOK</b></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="col-lg-6 col-md-6">
+                <div class="navbar-nav mx-auto">
+                    <form method="get" action="/search" class="form-inline my-2 my-lg-0 mx-3">
+        <input class="form-control mr-sm-2" type="search" name="query" id="query" placeholder="Search"
+          aria-label="Search">
+        <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+      </form>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                        <li class="nav-item {% block homeactive %} {% endblock homeactive%}">
+                            <a class=" nav-link" aria-current="page" href="/">Home<span
+                                class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item {% block blogactive %} {% endblock blogactive%}">
+                            <a class="nav-link" href="/blog/bloghome">Blogs</a>
+                        </li>
+                        <li class="nav-item {% block dashboardactive %} {% endblock dashboardactive%}">
+                            <a class="nav-link" href="../../notes/dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item {% block aboutactive %} {% endblock aboutactive%}">
+                            <a class="nav-link" href="../about">About</a>
+                        </li>
+                        <li class="nav-item {% block contactactive %} {% endblock contactactive%}">
+                            <a class="nav-link" href="../contact">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="user-menu-wrap">
+ {% for profile in profiles %}
+			<a class="mini-photo-wrapper"><img src="{{profile.image.url}}"  class="mini-photo" alt="my_photo" style="border-radius: 50%;
+    width: 50px;
+    height: 50px;"></a>
+            {% endfor %}
+<!--  <a class="mini-photo-wrapper"><img class="mini-photo" src="" width="36" height="36"/></a>-->
+
+
+  <div class="menu-container">
+    <ul class="user-menu">
+
+      <div class="profile-highlight">
+{% for profile in profiles %}
+        <img src="{{profile.image.url}}" alt="profile-img">
+{% endfor %}
+        <div class="details">
+          <div id="profile-name"><strong>HELLO! {{request.user}}</strong></div>
+        </div>
+      </div>
+
+      <li class="user-menu__item">
+          <div><strong>About</strong></div>
+            {% for profile in profiles %}
+            <p>{{ profile.add }}</p>
+            {% endfor %}
+
+      </li>
+
+      <div class="footer">
+          <li
+                  class="user-menu__item"><a class="user-menu-link" href="../../notes/dashboard"><h6><strong>Dashboard</strong></h6></a></li>
+          <li class="user-menu__item"><a class="user-menu-link" href="../../profile"><h6><strong>Profile</strong></h6></a></li>
+          <li class="user-menu__item"><a class="user-menu-link" href="../../changepassword"><h6><strong>Change Password</strong></h6></a></li>
+<!--          <li class="user-menu__item"><a class="user-menu-link" href="../../settings"><h6><strong>Settings</strong></h6></a></li>-->
+        <li class="user-menu__item"><a class="user-menu-link" href="/logout" style="color: #F44336;"><h6><strong>Logout</strong></h6></a></li>
+      </div>
+</ul>
+  </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show mb-0" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+<br>
+<br>
+
+    {% block body %} {% endblock %}
+
+
+
+
+    <footer class="footer" style="border-top: 2px solid black; padding-left: 375px;">
+        <section>
+            <ul>
+                <li>
+                    <h3>Help</h3>
+                </li>
+                <li><a href="/go/helpcenter" target="_blank" class="ga-footer" data-track="Help Center">Help Center</a>
+                </li>
+                <li><a href="/go/helpforum" target="_blank" class="ga-footer" data-track="Help Forum">Help Forum</a>
+                </li>
+                <li><a href="/go/tutorials" target="_blank" class="ga-footer" data-track="Video Tutorials">Video
+                        Tutorials</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h3>Community</h3>
+                </li>
+                <li><a href="/go/buzz" target="_blank" class="ga-footer" data-track="Blogger Buzz">Blogger Buzz</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h3>Developers</h3>
+                </li>
+                <li><a href="/go/devapi" target="_blank" class="ga-footer" data-track="Blogger API">Blogger API</a></li>
+                <li><a href="/go/devforum" target="_blank" class="ga-footer" data-track="Developer Forum">Developer
+                        Forum</a></li>
+            </ul>
+        </section>
+        <hr style="margin-left: -95px;">
+        <section class="meta">
+            <ul>
+                <li><a href="/go/terms" target="_blank" class="ga-footer" data-track="Terms of Service">Terms of
+                        Service</a></li>
+                <li><a href="/go/privacy" target="_blank" class="ga-footer" data-track="Privacy">Privacy</a></li>
+                <li><a href="/go/contentpolicy" target="_blank" class="ga-footer" data-track="Content Policy">Content
+                        Policy</a></li>
+            </ul>
+            <div><select name="" class="js-language-switch ga-language-switch language-switch" id="language-switch">
+                    <option value="?hl=af">Afrikaans&lrm;
+                    </option>
+                    <option value="?hl=am">Amharic - አማርኛ&lrm;
+                    </option>
+                    <option value="?hl=ar">Arabic - العربية&lrm;
+                    </option>
+                    <option value="?hl=eu">Basque - euskara&lrm;
+                    </option>
+                    <option value="?hl=bn">Bengali - বাংলা&lrm;
+                    </option>
+                    <option value="?hl=bg">Bulgarian - български&lrm;
+                    </option>
+                    <option value="?hl=ca">Catalan - &#8234;
+                        Català&#8236;
+                        &lrm;
+                    </option>
+                    <option value="?hl=zh-HK">Chinese (Hong Kong) - 中文（香港)&lrm;
+                    </option>
+                    <option value="?hl=zh-CN">Chinese (Simplified) - &#8234;
+                        简体中文&#8236;
+                        &lrm;
+                    </option>
+                    <option value="?hl=zh-TW">Chinese (Traditional) - 繁體中文&lrm;
+                    </option>
+                    <option value="?hl=hr">Croatian - Hrvatski&lrm;
+                    </option>
+                    <option value="?hl=cs">Czech - Čeština&lrm;
+                    </option>
+                    <option value="?hl=da">Danish - Dansk&lrm;
+                    </option>
+                    <option value="?hl=nl">Dutch - Nederlands&lrm;
+                    </option>
+                    <option value="?hl=en" selected="" disabled="">English</option>
+                    <option value="?hl=en-GB">English (United Kingdom)&lrm;
+                    </option>
+                    <option value="?hl=et">Estonian - eesti&lrm;
+                    </option>
+                    <option value="?hl=fil">Filipino&lrm;
+                    </option>
+                    <option value="?hl=fi">Finnish - Suomi&lrm;
+                    </option>
+                    <option value="?hl=fr-CA">French (Canada) - Français (Canada)&lrm;
+                    </option>
+                    <option value="?hl=fr">French (France) - Français (France)&lrm;
+                    </option>
+                    <option value="?hl=gl">Galician - galego&lrm;
+                    </option>
+                    <option value="?hl=de">German - Deutsch&lrm;
+                    </option>
+                    <option value="?hl=el">Greek - Ελληνικά&lrm;
+                    </option>
+                    <option value="?hl=gu">Gujarati - ગુજરાતી&lrm;
+                    </option>
+                    <option value="?hl=iw">Hebrew - עברית&lrm;
+                    </option>
+                    <option value="?hl=hi">Hindi - हिन्दी&lrm;
+                    </option>
+                    <option value="?hl=hu">Hungarian - magyar&lrm;
+                    </option>
+                    <option value="?hl=is">Icelandic - íslenska&lrm;
+                    </option>
+                    <option value="?hl=id">Indonesian - Indonesia&lrm;
+                    </option>
+                    <option value="?hl=it">Italian - Italiano&lrm;
+                    </option>
+                    <option value="?hl=ja">Japanese - 日本語&lrm;
+                    </option>
+                    <option value="?hl=kn">Kannada - ಕನ್ನಡ&lrm;
+                    </option>
+                    <option value="?hl=ko">Korean - 한국어&lrm;
+                    </option>
+                    <option value="?hl=lv">Latvian - latviešu&lrm;
+                    </option>
+                    <option value="?hl=lt">Lithuanian - lietuvių&lrm;
+                    </option>
+                    <option value="?hl=ms">Malay - Bahasa Melayu&lrm;
+                    </option>
+                    <option value="?hl=ml">Malayalam - മലയാളം&lrm;
+                    </option>
+                    <option value="?hl=mr">Marathi - मराठी&lrm;
+                    </option>
+                    <option value="?hl=no">Norwegian - norsk&lrm;
+                    </option>
+                    <option value="?hl=fa">Persian - فارسی&lrm;
+                    </option>
+                    <option value="?hl=pl">Polish - polski&lrm;
+                    </option>
+                    <option value="?hl=pt-BR">Portuguese (Brazil) - Português (Brasil)&lrm;
+                    </option>
+                    <option value="?hl=pt-PT">Portuguese (Portugal) - português (Portugal)&lrm;
+                    </option>
+                    <option value="?hl=ro">Romanian - română&lrm;
+                    </option>
+                    <option value="?hl=ru">Russian - Русский&lrm;
+                    </option>
+                    <option value="?hl=sr">Serbian - српски&lrm;
+                    </option>
+                    <option value="?hl=sk">Slovak - Slovenčina&lrm;
+                    </option>
+                    <option value="?hl=sl">Slovenian - slovenščina&lrm;
+                    </option>
+                    <option value="?hl=es-419">Spanish (Latin America) - Español (Latinoamérica)&lrm;
+                    </option>
+                    <option value="?hl=es">Spanish (Spain) - Español (España)&lrm;
+                    </option>
+                    <option value="?hl=sw">Swahili - Kiswahili&lrm;
+                    </option>
+                    <option value="?hl=sv">Swedish - Svenska&lrm;
+                    </option>
+                    <option value="?hl=ta">Tamil - தமிழ்&lrm;
+                    </option>
+                    <option value="?hl=te">Telugu - తెలుగు&lrm;
+                    </option>
+                    <option value="?hl=th">Thai - ไทย&lrm;
+                    </option>
+                    <option value="?hl=tr">Turkish - Türkçe&lrm;
+                    </option>
+                    <option value="?hl=uk">Ukrainian - Українська&lrm;
+                    </option>
+                    <option value="?hl=ur">Urdu - اردو&lrm;
+                    </option>
+                    <option value="?hl=vi">Vietnamese - Tiếng Việt&lrm;
+                    </option>
+                    <option value="?hl=zu">Zulu - isiZulu&lrm;
+                    </option>
+                </select></div>
+        </section>
+        <h6
+            style="color: whitesmoke; text-align: center; margin-top: 50px; margin-left: -389px;  margin-bottom: -12px;">
+            © 2020-2020, <a href="../" style="color: white; text-decoration: n;">TakeBOOK.com</a>, Inc. or its affiliates</h6>
+    </footer>
+
+    <script>
+
+        document
+  .querySelector(".mini-photo-wrapper")
+  .addEventListener("click", function () {
+    document.querySelector(".menu-container").classList.toggle("active");
+  });
+
+
+    </script>
+
+<script>{% block js %}{% endblock %}</script>
+
+ <!-- SCRIPTS -->
+
+ 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

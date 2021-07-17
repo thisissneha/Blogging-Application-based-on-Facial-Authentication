@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block css %}
+
+	.profile-pic{
+		max-width: 200px;
+		max-height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+
+.row{
+margin-top:20px;
+}
+
+.alert{
+margin-top: 16px;
+}
+
+{% endblock %}
+
+{% block body %}
+
+<br>
+
+<div class="stylish" style="    padding: 16px;
+    text-align: center;">
+<h3 xmlns="http://www.w3.org/1999/html" style="    font-size: 39px;
+    font-weight: 800;
+    padding-top: 20px;     color: #d0ed2d;
+    text-shadow: 4px 4px 6px #262121e0;">User Profile Page</h3>
+</div>
+
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<a class="btn btn-warning" href="{% url 'profile' %}"> &#8592; Back to Profile</a>
+			<hr>
+			<h3 style="text-align: center">Account Settings</h3>
+			<hr>
+            {% for profile in profiles %}
+			<img src="{{profile.image.url}}" alt="my_photo" style="border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-left: 64px;">
+            {% endfor %}
+
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="container">
+		<div class="row">
+
+		<div class="col-sm-6">
+		<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="form-row">
+		<div class="form-group col-md-6">
+		<label>FirstName</label>
+		<input type="text" class="form-control" value="{{data.user.first_name}}" name="firstname">
+		</div>
+		<div class="form-group col-md-6">
+		<label>LastName</label>
+		<input type="text" class="form-control" value="{{data.user.last_name}}" name="lastname">
+		</div>
+		</div>
+		<div class="form-row">
+		<div class="form-group col-md-12">
+		<label>UserName</label>
+		<input type="text" class="form-control" value="{{data.user.username}}" name="username" readonly>
+		</div>
+		</div>
+		<div class="form-row">
+		<div class="form-group col-md-12">
+		<label>Email Id</label>
+		<input type="text" class="form-control" value="{{data.user.email}}" name="email">
+		</div>
+		</div>
+		<div class="form-row">
+		<div class="form-group col-md-12">
+		<label>About</label>
+		<input type="text" class="form-control" value="{{data.add}}" name="add">
+		</div>
+		</div>
+		<div class="form-row">
+		<div class="form-group col-md-12">
+		<label>Profile Image</label>
+		<br>
+		<input type="file" id="image" class="image" value="{{data.image}}" name="image"  style="width: 108px;color:transparent;">
+		</div>
+		</div>
+
+
+		 <button type="submit" class="btn btn-info"
+				style="outline: none; background-color: cadetblue; margin-bottom: 70px;  margin-top: 20px;
+    margin-left: 0px;">Update Profile</button>
+    </form>
+</div>
+</div>
+	</div>
+</div>
+</div>
+
+
+{% endblock %}

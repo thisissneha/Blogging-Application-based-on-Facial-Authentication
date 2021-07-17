@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+
+{% block title %} About Us{% endblock %}
+
+{% block aboutactive %} active {% endblock aboutactive%}
+
+{% block css %}
+
+.w3-display-left {
+position: absolute;
+top: 30%;
+font-weight: 600;
+font-size: 53px;
+color: #1e1d1d94;
+left: 28%;
+transform: translate(0%,-50%);
+background-color: #f6dde1c2;
+}
+
+.w3-display-left1 {
+position: absolute;
+top: 48%;
+font-weight: 600;
+font-size: 53px;
+color: #1e1d1d94;
+left: 38%;
+transform: translate(0%,-50%);
+background-color: #f6dde1c2;
+}
+
+.card-text{
+font-family: 'Baloo Chettan 2', cursive;
+}
+
+.box .fa{
+font-size: 50px;
+border: 2px solid #e1dede;
+padding: 30px;
+color: #e17676;
+background-color: azure;
+border-radius: 50%;
+outline: none;
+}
+
+.skil{
+color: #d39191;
+font-family: 'Baloo Chettan 2', cursive;
+}
+
+.prof{
+font-size: 22px;
+}
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<div class="main">
+    <header>
+        <div class="one" style="display:flex; opacity: 0.8;">
+            <img src="{% static 'img/about-img.jpeg' %}" style="width: 50%; height: 500px; ">
+            <img src="{% static 'img/about-img1.jpeg' %}" style="width: 50%; height: 500px; ">
+        </div>
+        <div class="w3-display-left">
+            <p>HandCrafted With Thoughts</p>
+        </div>
+        <div class="w3-display-left1">
+            <p>Innovative Ideas</p>
+        </div>
+    </header>
+
+    <div class="container" style="padding:57px 200px;">
+        <h3>
+            <div class="20">MORE OF WHAT MATTERS TO YOU</div>
+        </h3>
+        <p>
+        <div class="60 mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quaerat dolore, officiis
+            sunt
+            id sit deserunt, fugit nostrum repudiandae consequatur mollitia hic, qui sint doloribus aut nam incidunt
+            magni dolor.Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, nulla sunt.
+            Voluptatum maxime soluta, quis officia officiis amet minima iusto temporibus neque repellat perferendis
+            recusandae dolore sint iure molestias cum!
+        </div>
+        </p>
+    </div>
+    <div class="one" style="display:flex; ">
+        <img src="{% static 'img/img2.jpeg' %}">
+        <img src="{% static 'img/img1.jpeg' %}">
+        <img src="{% static 'img/img3.jpeg' %}" style=" width: 60%;">
+    </div>
+    <div class="middle" style="display: flex;padding: 60px 40px; background-color: #e4e4e5;">
+        <div class="box" style="padding: 20px 60px;">
+            <div><i class="fa fa-eye"></i></div>
+            <h3 class="skil mt-1" style="padding-left: 17px;">FOCUS</h3>
+            <p class="skil mt-3">We have 100% commitment to do our work best, they can possibly be, no matter what it
+                takes
+                to get there.
+            </p>
+        </div>
+
+        <div class="box" style="    padding: 20px 60px;">
+            <div><i class="fa fa-heart"></i></div>
+            <h3 class="skil mt-1" style="padding-left: 7px;">PASSION</h3>
+            <p class="skil mt-3">Our desire to produce good work runs deep- that's what lets us handle every project
+                with
+                fresh energy and
+                enthusiasm.</p>
+        </div>
+
+        <div class="box" style="    padding: 20px 60px;">
+            <div><i class="fa fa-exchange"></i></div>
+            <h3 class="skil mt-1">EMPATHY</h3>
+            <p class="skil mt-3">While we share our knowledge and experience, we listen hard to understand your business
+                and your needs.
+            </p>
+        </div>
+        <div class="box" style="    padding: 20px 60px; ">
+            <div><i class="fa fa-users"></i></div>
+            <h3 class="skil mt-1">TEAMWORK</h3>
+            <p class="skil mt-3">We are united with you in thye drive to get the best from the project-think of us as
+                extra members of
+                your team with all skills you need.</p>
+        </div>
+    </div>
+
+    <div class="box-main" style="text-align: center;
+    padding: 24px;
+    background-color: #0f0a0ac9;
+    color: white;
+    font-size: 32px;">
+        <p><strong>Meet The Team</strong></p>
+    </div>
+    <div style="padding-bottom: 50px; padding-top: 70px; background: linear-gradient(45deg, #efd7b9, #f8ecd76e);">
+        <div class="container">
+            <div style="display: flex;">
+                <div class="card mb-3 mr-3"
+                    style=" background: linear-gradient(45deg,  #efd7b952, #f8ecd76e); max-width: 540px;border: none!important;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="{% static 'img/shipra.jpg' %}" class="card-img rounded-circle"
+                                style="width: 100%; height: 187px;">
+                            <!-- <img src="{% static 'img/img3.jpeg' %}" class="card-img rounded-circle" style="width: 100%; height: 187px;"> -->
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger"><strong>Shipra</strong></h5>
+                                 <p class="small mt-0" style="margin-top: -7px!important;"><em>(AWS Certified
+                                     Solution Architect)</em>
+                                 </p>
+                                <div class="prof" style="display: flex;">
+                                    <a href="https://www.linkedin.com/in/shipra-543b5a1b1" target="_blank"><i
+                                            class="fa fa-linkedin-square mr-2" style="color: #13a2cc; "></i></a>
+                                    <a href="https://twitter.com/limitless142?s=09" target="_blank"><i
+                                            class="fa fa-twitter mr-2" style="color: #0c88f1;"></i></a>
+                                    <a href="mailto: shiprac423@gmail.com" target="_blank"><i class="fa fa-envelope"
+                                            style="color: brown;"></i></a></div>
+                                <p class="card-text">She is awesome believing that every mark is more than just a logo,
+                                    but
+                                    a living breathing identity with its own voice. She passionately enjoying every
+                                    aspect.
+                                </p>
+                                <p class="card-text"><small class="text-muted">Student, MIET,Meerut</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3 ml-3"
+                    style=" background: linear-gradient(45deg,  #efd7b952, #f8ecd76e); max-width: 540px;margin-left:25px!important; border: none!important;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="{% static 'img/arpit.jpg' %}" class="card-img rounded-circle"
+                                style="width: 100%; height: 187px;">
+                            <!-- <img src="{% static 'img/img3.jpeg' %}" class="card-img rounded-circle" style="width: 100%; height: 187px;"> -->
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger"><strong>Arpit Mittal</strong></h5>
+                                 <p class="small mt-0" style="margin-top: -7px!important;"><em>(AWS Certified Developer
+                                 Associate)</em></p>
+                                <div class="prof" style="display: flex;">
+                                    <a href="https://www.linkedin.com/in/arpit-mittal-a7a709178" target="_blank"><i
+                                            class="fa fa-linkedin-square mr-2" style="    color: #13a2cc;"></i></a>
+                                    <a href="https://www.facebook.com/arpitmittal1999" target="_blank"><i
+                                            class="fa fa-facebook-official" style="color: #0909b0;"></i></a>
+                                    <a href="mailto: marpit111@gmail.com" target="_blank"><i class="fa fa-envelope ml-2"
+                                            style="color: brown;"></i></a>
+                                </div>
+                                <p class="card-text">Driven by bold creative thinking. Love pushes boundary for the
+                                    better
+                                    outcome. Dedicated towards his work and capturing the moments often go unnoticed.
+                                </p>
+                                <p class="card-text"><small class="text-muted">Student, MIET,Meerut</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card mt-5"
+                style=" background: linear-gradient(45deg,  #efd7b952, #f8ecd76e); max-width: 540px;border: none!important;  margin-left: 275px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/img1.png' %}" class="card-img rounded-circle"
+                            style="width: 100%; height: 187px;">
+                        <!-- <img src="{% static 'img/img3.jpeg' %}" class="card-img rounded-circle" style="width: 100%; height: 187px;"> -->
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger"><strong>Sneha Goel</strong></h5>
+                             <p class="small mt-0" style="margin-top: -7px!important;"><em>(AWS Certified Developer
+                             Associate)</em></p>
+                            <div class="prof" style="display: flex;">
+                                <a href="https://www.linkedin.com/in/sneha-goel-344002148" target="_blank"><i
+                                        class="fa fa-linkedin-square mr-2" style="    color: #13a2cc;"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=100016592958048" target="_blank"><i
+                                        class="fa fa-facebook-official" style="color: #0909b0;"></i></a>
+                                <a href="mailto: goelsneha030@gmail.com" target="_blank"><i class="fa fa-envelope ml-2"
+                                        style="color: brown;"></i></a></div>
+                            <p class="card-text">This is me, the Co-Founder and Creative Director who enjoys taking
+                                complicated websites. Inspired and Motivated on
+                                daily basis to helps brand grow.</p>
+                            <p class="card-text"><small class="text-muted">Student, MIET,Meerut</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+{% endblock %}

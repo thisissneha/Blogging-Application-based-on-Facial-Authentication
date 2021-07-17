@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} BlogPost {% endblock %}
+
+{% block blogactive %} active {% endblock blogactive%}
+
+{% block body %}
+{% load static %}
+{% load humanize %}
+{% load extras %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="ehuBMeto"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="omktCpmm"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="TVPXjhUm"></script>
+
+<div class="container my-5">
+    <h1 class="blog-post-title"><strong>{{post.title}}</strong></h1>
+    <p class="blog-post-meta mb-5">{{post.timeStamp}} by <span class="text-danger">{{post.author}}</span>
+<div class="mb-2">
+       <a href="https://twitter.com/intent/tweet?button_hashtag=share&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="What are your thoughts Today..!!" data-url="http://127.0.0.1:8000/blog/{{post.slug}}" data-lang="en" data-show-count="false">Tweet #share</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+    <div class="fb-share-button" data-href="http://127.0.0.1:8000/blog/{{post.slug}}" data-layout="button_count"
+         data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fblog%2F%257B%257Bpost.slug%257D%257D&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+      <div class="fb-like" data-href="http://127.0.0.1:8000/blog/{{post.slug}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
+
+    <p>{{post.content|safe}}</p>
+    <hr>
+   <div class="fb-comments" data-href="http://127.0.0.1:8000/blog/{{post.slug}}" data-numposts="5" data-width=""></div>
+</div>
+
+{% endblock %}
+

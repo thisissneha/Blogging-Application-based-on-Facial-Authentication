@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact {% endblock %}
+
+{% block contactactive %} active {% endblock contactactive%}
+
+{% block css %}
+.one{
+background-color: #210c3fdb;
+color: white;
+text-align:center;
+padding-top:70px;
+width:100%;
+}
+
+.form-sh{
+
+width: 60%;
+border-radius: 16px;
+padding: 16px;
+border: none;
+outline: none;
+opacity: 0.9;
+margin-left: 133px;
+margin-top: 35px;
+}
+
+.d-flex .form-control{
+margin-top: 34px;
+}
+
+.btn-info{
+height: 35px;
+margin-top: 35px;
+}
+
+.col-lg-6{
+height: 37px;
+}
+
+.navbar{
+height:57px;
+}
+.alert{
+    margin-top: 57px;
+}
+
+
+{% endblock %}
+
+{% block body %}
+{% load static %}
+<div style="display: flex;margin-top: -47px;">
+    <div class="one">
+        <h6><i class="fa fa-mars-stroke-h" style="font-size: 30px;margin-right: 10px;"></i>CONTACT US</h6>
+        <h1>
+            <div class="200">Contact Our Support Team</div>
+            <div class="container my-3">
+
+                <form method="post" action="/contact/">
+                    {% csrf_token %}
+                    <div class="form-group">
+
+                        <input type="name" class="form-control form-sh" name="name" id="name"
+                            placeholder="Enter your Name">
+                    </div>
+                    <div class="form-group">
+
+                        <input type="email" class="form-control form-sh" name="email" id="email"
+                            placeholder="Enter your Email Address">
+                        <small id="emailHelp" style="font-size: 15px;" class="form-text text-muted">We'll never share
+                            your email with
+                            anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+
+                        <input type="tel" class="form-control form-sh" name="phone" id="phone" style="margin-top: 20px;"
+                            placeholder="Enter your Phone Number">
+                    </div>
+                    <div class="form-group">
+
+                        <textarea class="form-control form-sh" name="content" id="content" col="30" rows="5"
+                            placeholder="We concern about you..!!"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-light mt-1">Submit</button>
+                </form>
+            </div>
+        </h1>
+
+    </div>
+    <div>
+        <img src="{% static  'img/contact1.jpg' %}" style=" width: 778px; height: 100px;filter: invert(17%);">
+        <img src="{% static  'img/contact21.jpg' %}">
+
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %} User Profile {% endblock %}
+
+{% load static %}
+{% block css %}
+
+<!--body{-->
+<!--background-color: #f8ede4c9;-->
+<!--}-->
+
+<!--.card-body{-->
+
+<!--    background-color: #f1dbc8e0;-->
+<!--}-->
+
+	.profile-pic{
+		max-width: 200px;
+		max-height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+
+.row{
+margin-top:60px;
+}
+
+.alert{
+    margin-top: 67px;
+}
+
+{% endblock %}
+
+{% block body %}
+
+<br>
+
+<div class="stylish" style="    padding: 16px;
+    text-align: center;">
+<h3 xmlns="http://www.w3.org/1999/html" style="    font-size: 39px;
+    font-weight: 800;
+    padding-top: 20px;     color: #d0ed2d;
+    text-shadow: 4px 4px 6px #262121e0;">User Profile Page</h3>
+</div>
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Home</a>
+			<hr>
+			<h3 style="text-align: center">Profile Image</h3>
+			<hr>
+            {% for profile in profiles %}
+			<img src="{{profile.image.url}}" alt="my_profile"
+				 style="border-radius: 50%; width: 150px; height: 150px; margin-left: 64px;">
+            {% endfor %}
+
+		</div>
+	</div>
+
+
+
+	<div class="col-md-9">
+		<div class="container">
+			<hr>
+			<div class="row">
+				<div class="col-md-6">
+					<b>Unique Name : </b>
+				</div>
+				<div class="col-md-6">
+					{{data.user.username}}
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-6">
+					<b>Full Name : </b>
+				</div>
+				<div class="col-md-6" style="text-transform: capitalize;">
+					{{data.user.first_name}} {{data.user.last_name}}
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-6">
+					<b>Email Address : </b>
+				</div>
+				<div class="col-md-6">
+					{{data.user.email}}
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-6">
+					<b>About : </b>
+				</div>
+				<div class="col-md-6">
+					{{data.add}}
+				</div>
+			</div>
+			<hr>
+
+             <a href="../editProfile" class="btn btn-info"
+				style="outline: none; background-color: cadetblue; margin: 50px;
+    margin-left: 0px;">Edit Profile</a>
+
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}
