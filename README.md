@@ -9,5 +9,6 @@ authenticated user have the access and the content is
 protected using face lock.
 
 - Language Used - **Python**
+- Used - **OpenCV** (_Image Detection_)
 - Framework - **Django**
 - Web Developement - **Bootstrap, HTML, CSS, JS**
